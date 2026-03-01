@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe AI Bot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎮 Tic-Tac-Toe AI Bot</h1>
+            <p class="subtitle">Play against the unbeatable AI</p>
+        </header>
+
+        <div class="game-wrapper">
+            <div class="game-info">
+                <div class="player-info">
+                    <span class="badge player-badge">YOU</span>
+                    <p>You are <strong>X</strong></p>
+                </div>
+                <div class="vs">VS</div>
+                <div class="ai-info">
+                    <span class="badge ai-badge">AI</span>
+                    <p>AI is <strong>O</strong></p>
+                </div>
+            </div>
+
+            <div class="game-board" id="gameBoard">
+                <div class="cell" data-index="0"></div>
+                <div class="cell" data-index="1"></div>
+                <div class="cell" data-index="2"></div>
+                <div class="cell" data-index="3"></div>
+                <div class="cell" data-index="4"></div>
+                <div class="cell" data-index="5"></div>
+                <div class="cell" data-index="6"></div>
+                <div class="cell" data-index="7"></div>
+                <div class="cell" data-index="8"></div>
+            </div>
+
+            <div class="status-box" id="statusBox">
+                <p id="statusText">Your turn - Click a cell</p>
+            </div>
+
+            <div class="button-group">
+                <button class="btn btn-reset" id="resetBtn">🔄 New Game</button>
+                <button class="btn btn-info" id="infoBtn">ℹ️ How to Play</button>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-label">Moves</span>
+                <span class="stat-value" id="moveCount">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Algorithm</span>
+                <span class="stat-value">Minimax</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Difficulty</span>
+                <span class="stat-value">Unbeatable</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for instructions -->
+    <div class="modal" id="infoModal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>How to Play</h2>
+            <ul>
+                <li>You are <strong>X</strong>, the AI is <strong>O</strong></li>
+                <li>Click on any empty cell to place your mark</li>
+                <li>The AI will automatically respond with its move</li>
+                <li>Get three in a row (horizontal, vertical, or diagonal) to win</li>
+                <li>The AI uses the Minimax algorithm - it plays optimally</li>
+                <li>You cannot beat the AI (unless you make a good move first!)</li>
+            </ul>
+            <p><strong>Pro Tip:</strong> Try to get the center or corners for better chances!</p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
